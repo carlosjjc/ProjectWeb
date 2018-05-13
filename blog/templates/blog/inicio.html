@@ -1,0 +1,46 @@
+{% load staticfiles %}
+<html>
+    <head>
+        <title>Sistema de Apostas</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+            <h1><a href="">Sistema de Apostas</a></h1>
+        </div>
+        
+        <div>
+            <ul>
+                <li><h3><a href="/home/">Home</a></h2></li>
+                <li><h3><a href="/apostar/">Apostar</a></h2></li>
+                <li><h3><a href="/resultados/">Resultados</a></h2></li>
+                <li><h3><a href="/ranking/">Ranking</a></h2></li>
+                <li><h3><a href="/cadastro/">Cadastro</a></h2></li>
+                <li><h3><a href="/login/">Login</a></h2></li>
+             
+            </ul>
+        </div>
+        
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% for part in partida %}
+                        <div class="partida">
+                            <h3><a href="">{{part.nome}}</a></h3>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <a href="{% url 'blog.views.deslogar' %}">Logout</a>
+        </div>
+      
+
+ 
+    </body>
+</html>

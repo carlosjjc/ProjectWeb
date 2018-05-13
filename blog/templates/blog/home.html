@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+      <link rel="stylesheet" href="/static/css/fontawesome.min.css">
+      <script src="/static/js/jquery-3.3.1.min.js"></script>
+      <script src="/static/js/bootstrap.min.js"></script>
+
+      <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+        
+        li {
+            float: left;
+        }
+        
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+        
+        .active {
+            background-color: rgb(240, 62, 49);
+        }
+     </style>
+  </head>
+
+  <body>
+
+    <ul>
+      <li><a href="/home/">Home</a></li>
+      <li><a href="/resultados/">Resultados</a></li>
+      <li><a href="/ranking/">Ranking</a></li>
+      <li style="float:right"><a class="active" href="/login/">Sair</a></li>
+    </ul>
+    
+    <div class="container">
+        <table class="table table-hover">
+            {%for partida in partida%}
+            <div align="center">
+
+                <tbody>
+                
+                    <tr>
+                        <td align="center">{{ partida }}</td>
+                        
+                    </tr>
+                
+                </tbody>
+            
+            </div>
+        {%endfor%}
+        </table>
+    </div>
+    
+    </body>
+</html>
